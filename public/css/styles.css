@@ -60,17 +60,38 @@ nav ul li a:hover {
   margin: 30px 60px;
   background-color: rgb(217, 226, 223);
   text-align: center;
-  margin-top: 20%;
-  
+  margin-top: 20%; 
+}
+.header-left h3{
+  margin-top: 2rem;
+  line-height: 1.5rem;
 }
 .container_fluid{
   display: grid;
   grid-template-columns: repeat(2,1fr);
   margin: 20px 40px;
 }
+
 .container_right ul li{
   margin: 10px 30px;
 }
+.img{
+  margin-top: 2rem;
+}
+.wrappers{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  
+}
+.content{
+ margin-top: 2rem;
+ margin-bottom: 2rem;
+}
+.hero{
+  background-color: blue;
+  padding: 2rem;
+}
+
 .copyright{
   background-color: black;
   padding: 2rem;
@@ -82,6 +103,10 @@ nav ul li a:hover {
   }
   .container{
     grid-template-columns: 1fr;
+  }
+  .wrappers{
+    grid-template-columns: 1fr;
+    text-align: center;
   }
   
 }

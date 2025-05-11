@@ -23,10 +23,19 @@ app.use(express.static('public'));
 
 
 // index route
-app.get("/", function(req, res){
-  res.render("index", {title: "Home"})
+// app.get("/", function(req, res){
+//   res.render("index", {title: "Home"})
+// })
+app.get("/", function(req, res) {
+  res.render("index", {
+    title: "Home",
+    imagePath: "/images/site/own_today.png", // Define and pass imagePath
+    imagePath1: "/images/upgrades/flux-cap.png",
+    imagePath2: "/images/upgrades/flame.jpg",
+    imagePath3: "/images/upgrades/bumper_sticker.jpg",
+    imagePath4: "/images/upgrades/hub-cap.jpg"
+  })
 })
-
 
 /* ***********************
  * Local Server Information
