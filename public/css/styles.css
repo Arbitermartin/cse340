@@ -4,3 +4,84 @@
 *:after {
   box-sizing: border-box;
 }
+*{
+  margin: 0;
+  padding: 0;
+}
+#top-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+.siteName a{
+  color: black;
+  text-decoration: none;
+}
+#tools a{
+  text-decoration: none;
+  color: black;
+}
+nav{
+  background-color: black;
+  padding: 1rem;
+  margin: 5px 10px;
+
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+nav ul li {
+  padding: 15px 20px;
+  list-style: none;
+  color: whitesmoke;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+nav ul li a:hover {
+  color: #ddd;
+}
+.message{
+ margin: 10px 20px;
+}
+.container{
+  background-image: url('../images/vehicles/adventador.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  margin: 5px 10px;
+}
+.header-left{
+  margin: 30px 60px;
+  background-color: rgb(217, 226, 223);
+  text-align: center;
+  margin-top: 20%;
+  
+}
+.container_fluid{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  margin: 20px 40px;
+}
+.container_right ul li{
+  margin: 10px 30px;
+}
+.copyright{
+  background-color: black;
+  padding: 2rem;
+  color: whitesmoke;
+}
+@media(max-width:768px){
+  .container_fluid{
+    grid-template-columns: 1fr;
+  }
+  .container{
+    grid-template-columns: 1fr;
+  }
+  
+}
