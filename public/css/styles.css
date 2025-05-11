@@ -24,7 +24,7 @@
 nav{
   background-color: black;
   padding: 1rem;
-  margin: 5px 10px;
+  
 
 }
 nav ul {
@@ -73,6 +73,7 @@ nav ul li a:hover {
 }
 
 .container_right ul li{
+  font-size: 24px;
   margin: 10px 30px;
 }
 .img{
