@@ -32,7 +32,6 @@ nav ul {
   justify-content: space-around;
 }
 nav ul li {
-  padding: 15px 20px;
   list-style: none;
   color: whitesmoke;
 }
@@ -54,7 +53,7 @@ nav ul li a:hover {
   height: 500px;
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  margin: 5px 10px;
+ 
 }
 .header-left{
   margin: 30px 60px;
@@ -109,5 +108,6 @@ nav ul li a:hover {
     grid-template-columns: 1fr;
     text-align: center;
   }
+
   
 }
