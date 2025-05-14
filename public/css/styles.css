@@ -22,15 +22,11 @@
 
 
 /******* Change Box Model ***************/
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
 *{
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
 }
 #top-header{
   display: flex;
@@ -38,12 +34,12 @@
   padding: 2rem;
 }
 .siteName a{
-  color: black;
+  color: var(--mporipori-color);
   text-decoration: none;
 }
 #tools a{
   text-decoration: none;
-  color: black;
+  color: var(--mporipori-color);
 }
 nav{
   background-color: var(--color-bg);
@@ -64,9 +60,6 @@ nav ul li a {
   text-decoration: none;
   font-size: 16px;
 }
-nav ul li a:hover {
-  color: #ddd;
-}
 .message{
  margin: 10px 20px;
 }
@@ -85,7 +78,7 @@ nav ul li a:hover {
   text-align: center;
   margin-top: 20%; 
 }
-.header-left h3{
+.header-left p{
   margin-top: 2rem;
   line-height: 1.5rem;
 }
