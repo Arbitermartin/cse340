@@ -131,12 +131,28 @@ nav ul li a:hover{
 }
 #inv-display li{
   list-style: none;
+  background-color: var(--color-bg);
+  margin: 20px 40px;
+  padding: 2rem;
+}
+#inv-display li img{
+ width: 200px;
+ height: 200px;
+}
+.namePrice{
+  line-height: 2rem;
+  color: var(--color-white);
 }
 #inv-display li a{
+  line-height: 2rem;
   text-decoration: none;
+  color: var(--color-white);
+}
+#inv-display li a:hover{
+  color: var(--color-primary-variant);
 }
 #inv-display hr{
-  width: 20px;
+  width: 100px;
 }
 @media(max-width:768px){
   .container_fluid{
