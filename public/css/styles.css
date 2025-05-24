@@ -107,11 +107,19 @@ nav ul li a:hover{
 .wrappers{
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  
+  gap: 2rem;
 }
 .content{
  margin-top: 2rem;
- margin-bottom: 2rem;
+ background-color: var(--color-bg);
+}
+.content img,p{
+  display: block;
+  margin: 20px 30px;
+  padding: 1.5rem;
+}
+.content p a{
+  color: var(--color-white);
 }
 .hero{
   background-color: var(--color-bg);
