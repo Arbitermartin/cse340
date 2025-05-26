@@ -65,3 +65,45 @@ Util.buildClassificationGrid = async function(data){
   }
   return grid
 }
+
+Util.buildSingleVehicleDisplay = async (vehicle) => {
+  // Format price as USD with commas and currency symbol
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD'
+    }).format(amount);
+  };
+
+  // Format mileage with commas
+  const formatNumber = (number) => {
+    return new Intl.NumberFormat('en-US').format(number);
+  };
+
+  // Use fallback image if inv_image is missing or empty
+  const imageSrc = vehicle.inv_image && vehicle.inv_image !== ''
+    ? vehicle.inv_image
+    : '/images/vehicle-placeholder.jpg';
+
+  // Build HTML structure
+  let svd = '<section id="vehicle-display" role="region" aria-label="Vehicle Details">';
+  svd += '<div class="vehicle-detail-container">';
+  svd += '<div class="vehicle-image">';
+  svd += `<img src="${imageSrc}" alt="${vehicle.inv_make} ${vehicle.inv_model}" />`;
+  svd += '</div>';
+  svd += '<div class="vehicle-info">';
+  svd += `<h1>${vehicle.inv_make} ${vehicle.inv_model}</h1>`;
+  svd += '<div class="vehicle-specs">';
+  svd += `<p><strong>Year:</strong> ${vehicle.inv_year}</p>`;
+  svd += `<p><strong>Price:</strong> ${formatCurrency(vehicle.inv_price)}</p>`;
+  svd += `<p><strong>Mileage:</strong> ${formatNumber(vehicle.inv_miles)} miles</p>`;
+  svd += `<p><strong>Color:</strong> ${vehicle.inv_color}</p>`;
+  svd += `<p><strong>Class:</strong> ${vehicle.classification_name}</p>`;
+  svd += `<p><strong>Description:</strong> ${vehicle.inv_description}</p>`;
+  svd += '</div>';
+  svd += '<a href="/contact" class="cta-button" role="button" tabindex="0">Contact Dealer</a>';
+  svd += '</div>';
+  svd += '</div>';
+  svd += '</section>';
+  return svd;
+}

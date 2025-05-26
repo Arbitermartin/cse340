@@ -162,6 +162,115 @@ nav ul li a:hover{
 #inv-display hr{
   width: 100px;
 }
+#vehicle-display {
+  background-color: #f9fafb;
+  padding: 2rem 0;
+}
+
+.vehicle-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.vehicle-image {
+  flex: 1 1 40%;
+  min-width: 300px;
+}
+
+.vehicle-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.vehicle-image img:hover {
+  transform: scale(1.05);
+}
+
+.vehicle-info {
+  flex: 1 1 50%;
+  min-width: 300px;
+  padding: 1.5rem;
+}
+
+.vehicle-info h1 {
+  font-size: 2.5rem;
+  margin: 0 0 1.5rem;
+  color: #1a2b49;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.vehicle-specs {
+  display: grid;
+  gap: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.vehicle-specs p {
+  margin: 0;
+  color: #34495e;
+}
+
+.vehicle-specs strong {
+  color: #1a2b49;
+  font-weight: 600;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--color-bg);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+  background-color: var(--color-gray-700);
+  outline-offset: 2px;
+}
+
+/* Message styling for errors or notices */
+.message {
+  text-align: center;
+  padding: 1rem;
+  color: var(--mporipori-color);
+  font-size: 1.1rem;
+}
+@media (max-width: 480px) {
+  .vehicle-info h1 {
+    font-size: 1.8rem;
+  }
+  .vehicle-specs {
+    gap: 0.8rem;
+    font-size: 0.95rem;
+  }
+  .cta-button {
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem;
+  }
+  .vehicle-detail-container {
+    margin: 1rem;
+  }
+}
 /* Mobile devices (portrait and smaller) */
 @media (max-width: 768px) {
   .container_fluid {
@@ -191,7 +300,27 @@ nav ul li a:hover{
     width: 100%;
     height: auto;
   }
+  /* vehicle responsive */
+  .vehicle-detail-container {
+    flex-direction: column;
+    box-shadow: none;
+    padding: 0;
+  }
+  .vehicle-image,
+  .vehicle-info {
+    flex: 1 1 100%;
+  }
+  .vehicle-info {
+    padding: 1rem;
+  }
+  .vehicle-info h1 {
+    font-size: 2rem;
+  }
+  .vehicle-specs {
+    font-size: 1rem;
+  }
 }
+
 
 /* Tablets and small desktops */
 @media (min-width: 769px) and (max-width: 1024px) {
