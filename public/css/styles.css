@@ -162,11 +162,11 @@ nav ul li a:hover{
 #inv-display hr{
   width: 100px;
 }
+/* vehcle style start here. */
 #vehicle-display {
   background-color: #f9fafb;
   padding: 2rem 0;
 }
-
 .vehicle-detail-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -320,8 +320,6 @@ nav ul li a:hover{
     font-size: 1rem;
   }
 }
-
-
 /* Tablets and small desktops */
 @media (min-width: 769px) and (max-width: 1024px) {
   #inv-display {

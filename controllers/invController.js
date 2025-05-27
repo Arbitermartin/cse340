@@ -36,6 +36,9 @@ invCont.buildDetail = async function (req, res, next) {
     htmlData,
   })
 }
+invCont.throwError = async function (req, res) {
+  throw new Error("I am an intentional error")
+}
 
 
 module.exports = invCont
