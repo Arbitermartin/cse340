@@ -10,9 +10,14 @@
 const utilities = require("../utilities/");
 const baseController ={};
 
+
+
 async function buildHome(req, res, next) {
   try {
     let nav = await utilities.getNav(); // Fetch navigation data
+    // notice message
+    req.flash("notice", "This is a flash message.")
+    // end of text message.
     res.render("index", {
       title: "Home",
       imagePath: "/images/site/own_today.png", // Main DeLorean image
@@ -26,6 +31,8 @@ async function buildHome(req, res, next) {
     next(err);
   }
 }
+
+
 /* *********************************
  * Task 3 Trigger a 500 Server Error
  * ****************************** */
