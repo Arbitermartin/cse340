@@ -1,14 +1,16 @@
 
 // TOGGLE BUTTON 
-// document.getElementById('toggleButton').addEventListener('click', function () {
-//   let ul = document.getElementById('ul');
-//   if (ul.classList.contains('show')) {
-//     this.innerHTML = '<i class="fa fa-bars"></i>';
-//   } else {
-//     this.innerHTML = '<i class="fa fa-x"></i>';
-//   }
-//   ul.classList.toggle('show');
-// });
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.getElementById('toggleButton');
+    const navMenu = document.getElementById('navMenu');
+
+    toggleButton.addEventListener('click', function () {
+      navMenu.classList.toggle('show');
+      this.innerHTML = navMenu.classList.contains('show')
+        ? '<i class="fa fa-x"></i>'
+        : '<i class="fa fa-bars"></i>';
+    });
+  });
 
 // Password toggle functionality
    const togglePassword = document.getElementById('togglePassword');
