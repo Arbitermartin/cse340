@@ -273,7 +273,7 @@ h1{
 }
 .login-form {
   max-width: 400px;
-  margin: 20px;
+  margin: 20px auto;
   padding: 2rem;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -330,7 +330,7 @@ h1{
 /* registration style start here */
 .register-form {
   max-width: 400px;
-  margin: 20px;
+  margin: 20px auto;
   padding: 2rem;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -450,15 +450,11 @@ h1 {
 }
 
 .form-group {
-  /* width: 100%;
+  width: 100%;
   max-width: 400px;
   margin: 20px auto;
-  text-align: left; */
-  width: 100%;
-  max-width: 600px; /* Controls max width on larger screens */
-  margin: 40px;
-  padding: 0 15px; /* Horizontal padding for smaller screens */
-  box-sizing: border-box;
+  text-align: left;
+  
 }
 
 label {
@@ -483,7 +479,7 @@ textarea {
   display: block;
   width: 350px;
   height: 60px;
-  margin: 20px;
+  margin: 20px auto;
   font-size: 16px;
   color: white;
   border: none;
@@ -515,7 +511,56 @@ textarea {
   text-decoration: underline;
 }
 
+/* new style update */
+.official{
+ text-align: center;
+}
+#inventoryDisplay{
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+.class{
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 2rem;
+}
+table#inventoryDisplay {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
 
+table#inventoryDisplay thead {
+  background-color: #f2f2f2;
+}
+
+table#inventoryDisplay th, table#inventoryDisplay td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table#inventoryDisplay th {
+  font-weight: bold;
+}
+
+table#inventoryDisplay a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+table#inventoryDisplay a:hover {
+  text-decoration: underline;
+}
+
+p.error {
+  color: red;
+  font-weight: bold;
+}
 
 @media (max-width: 480px) {
   .vehicle-info h1 {

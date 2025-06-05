@@ -18,6 +18,7 @@ const session = require("express-session")
 const pool = require('./database/')
 const bodyParser = require("body-parser")
 const flash =require("connect-flash")
+const cookieParser = require("cookie-parser")
 
 /* ***********************
  * Routes
@@ -49,18 +50,15 @@ app.use(function(req, res, next){
   next()
 })
 
-// changes added thid day 02/06/2025.
-// app.use(flash()),
-// app.use((req,res,next)=>{
-//   res.locals.success =res.flash("success"),
-//   res.locals.error =res.flash("error");
-//   next();
-// })
-
-
 // bodyParser  added here.
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
+// unit 05 login activity.
+app.use(cookieParser())
+
+//webtoken
+app.use(utilities.checkJWTToken)
 
 app.use(express.static('public'));
 app.use(static);

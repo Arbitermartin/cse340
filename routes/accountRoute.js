@@ -41,27 +41,25 @@ router.post(
     regValidate.checkRegData,
     utilities.handleErrors(accountController.registerAccount)
   )
+  router.get("/",utilities.handleErrors(accountController.accountManagement))
+   /*****************
+    * login process
+    * unit 04 stickness activity
+    * modified in unit five login process activity
+    */
+   router.post(
+    "/login",
+    regValidate.loginRules(),
+    regValidate.checkLoginData,
+    utilities.handleErrors(accountController.accountLogin)
+   )
 
-  // Process the login data
-  // router.post(
-  //   "/login",
-  //   regValidate.loginRules(),
-  //   regValidate.checkLoginData,
-  //   utilities.handleErrors(accountController.loginAccount)
-  // )
+   /*********************
+    * account route
+    * check login view.
+    ***********************/
+   router.get("/", utilities.checkLogin, utilities.handleErrors(accountController.accountManagement))
 
-//  router.post(
-// )
-// router.get(
-    
-// )
-// Process the login attempt
-// router.post(
-//   "/login",
-//   (req, res) => {
-//     res.status(200).send('login process')
-//   }
-// )
- 
+   
 
 module.exports= router
