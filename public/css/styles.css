@@ -68,6 +68,7 @@ nav ul li a:hover{
   background-color: var(--primary-color);
   padding: .7rem;
 }
+
 .message{
  margin: 10px 20px;
 }
@@ -610,11 +611,15 @@ textarea {
   .vehicle-grid {
     grid-template-columns: 1fr;
   }
-  nav  {
-    gap: 3rem;
-    
+  /* changes for navigation bar */
+  nav ul{
+ display: block;
+ text-align: center; 
   }
-  
+  nav ul li{
+    line-height: 2rem;
+  }
+   /* changes end here */
 }
 /* Tablets and small desktops */
 @media (min-width: 769px) and (max-width: 1024px) {
