@@ -93,6 +93,11 @@ router.get("/edit/:inv_id", utilities.handleErrors(invController.editInventoryVi
 // route to deliver the edit changes to the database.
 router.post("/update/", invController.updateInventory)
 
+// Route to deliver delete inventory view
+router.get("/delete/:inv_id", utilities.handleErrors(invController.deleteconfirmView))
+
+// route to deliver the edit changes to the database.
+router.post("/delete/", invController.deleteInventory)
 
 
 module.exports = router;
