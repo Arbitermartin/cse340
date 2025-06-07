@@ -131,41 +131,30 @@ async function updateInventory(
     console.error("model error: " + error)
   }
 }
-
-/* ***************************
- *  delete Inventory Data
- * ************************** */
-async function deleteInventory(
-  inv_id,
-  inv_make,
-  inv_model,
-  inv_description,
-  inv_image,
-  inv_thumbnail,
-  inv_price,
-  inv_year,
-  inv_miles,
-  inv_color,
-  classification_id
-) {
+/***************************
+ * delete inventory data
+ * this is in team 05 unit 5 2025
+ ********************************/
+async function deleteInventoryById(inv_id) {
   try {
-    const sql ="DELETE FROM inventory WHERE inv_id = $1 RETURNING *"
-    const data = await pool.query(sql, [
-      inv_make,
-      inv_model,
-      inv_description,
-      inv_image,
-      inv_thumbnail,
-      inv_price,
-      inv_year,
-      inv_miles,
-      inv_color,
-      classification_id,
-      inv_id
-    ])
-    return data.rows[0]
+    const result = await pool.query(
+      'DELETE FROM inventory WHERE inv_id = $1 RETURNING *',
+      [inv_id]
+    )
+    console.log("Delete result for inv_id", inv_id, ":", result.rows[0])
+    if (result.rowCount === 0) {
+      console.log("No inventory item found with inv_id:", inv_id)
+      return { success: false, message: "No inventory item found with ID " + inv_id }
+    }
+    return { success: true, data: result.rows[0] }
   } catch (error) {
-    console.error("model error: " + error)
+    console.error("Database error in deleteInventoryById:", error.message, error.stack)
+    let message = "Failed to delete inventory item due to a server error."
+    if (error.message.includes("foreign key constraint")) {
+      message = "Cannot delete item due to related records (e.g., in cart or orders)."
+    }
+    return { success: false, message }
   }
 }
-module.exports = { getClassifications, getInventoryByClassificationId, getInventoryById, addClassification, addInventory,updateInventory,deleteInventory }
+
+module.exports = { getClassifications, getInventoryByClassificationId, getInventoryById, addClassification, addInventory,updateInventory,deleteInventoryById }
