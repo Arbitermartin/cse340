@@ -110,7 +110,7 @@ async function accountLogin(req, res) {
   const { account_email, account_password } = req.body
   const accountData = await accountModel.getAccountByEmail(account_email)
   if (!accountData) {
-    req.flash("notice", "Please check your credentials and try again.")
+    req.flash("notice", "Please log in as an Employee or Admin to access this page.")
     res.status(400).render("account/login", {
       title: "Login",
       nav,
@@ -131,7 +131,7 @@ async function accountLogin(req, res) {
       return res.redirect("/account/")
     }
     else {
-      req.flash("message notice", "Please check your credentials and try again.")
+      req.flash("message notice", "Please log in as an Employee or Admin to access this page.")
       res.status(400).render("account/login", {
         title: "Login",
         nav,
@@ -148,16 +148,29 @@ async function accountLogin(req, res) {
 * *************************************** */
 async function accountManagement(req, res, next) {
   let nav = await utilities.getNav()
-  const { account_firstname, account_email } = res.locals.accountData || {}
+  const accountData =res.locals.accountData ||{}
   res.render("account/management", {
     title: "Account Management",
     nav,
     errors: null,
     messages: req.flash(),
-    account_firstname: account_firstname || "",
-    account_email: account_email || "",
+    account_firstname: accountData.account_firstname,
+    account_email: accountData.account_email,
+    account_type: accountData.account_type
   })
+}
+// }
+/* ***************************
+ *  Process Logout
+ * ************************** */
+ async function  logoutaccount  (req, res, next) {
+  console.log("Logging out user:", res.locals.accountData?.account_email)
+  res.clearCookie("jwt")
+  res.locals.loggedin = 0
+  res.locals.accountData = null
+  req.flash("notice", "You have been logged out Successfully.")
+  res.redirect("/account/login")
 }
 
 
-module.exports ={buildLogin,buildRegister,registerAccount,loginAccount,accountLogin,accountManagement}
+module.exports ={buildLogin,buildRegister,registerAccount,loginAccount,accountLogin,accountManagement,logoutaccount}

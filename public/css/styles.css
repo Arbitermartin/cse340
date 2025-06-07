@@ -489,6 +489,11 @@ textarea {
 .submit---btn:hover {
   background-color: var(--color-primary-variant);
 }
+.submit---btn a{
+  text-decoration: none;
+  color: var(--color-white);
+
+}
 
 .martin {
   list-style: none;
@@ -512,6 +517,19 @@ textarea {
 }
 
 /* new style update */
+.management{
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: left;
+}
+.management a{
+  text-decoration: none;
+  font-size: 20px;
+}
+.management a:hover{
+  text-decoration: underline;
+}
 .official{
  text-align: center;
 }
@@ -691,7 +709,10 @@ p.error {
   margin: 10px;
 }
 /* end of toggle menu style here */
-
+ /* management link responsive */
+ .management a{
+  margin-left: 3rem;
+}
 }
 /* Tablets and small desktops */
 @media (min-width: 769px) and (max-width: 1024px) {

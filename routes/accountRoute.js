@@ -60,6 +60,16 @@ router.post(
     ***********************/
    router.get("/", utilities.checkLogin, utilities.handleErrors(accountController.accountManagement))
 
+    // Route to process login
+    router.post("/login", utilities.handleErrors(accountController.accountLogin))
+
+   // Route to process logout
+   router.get("/logout", utilities.handleErrors(accountController.logoutaccount))
+   
+
+    
+
+
    
 
 module.exports= router

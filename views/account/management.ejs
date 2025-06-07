@@ -10,6 +10,12 @@
         <% }) %>
       </ul>
     <% } %>
-    <p>Welcome, <%- account_firstname %>! You're logged in.</p>
-    <p>we are here to learn database for development in 2025 so <br> your welcome to join in our team</p>
+    <div class="management">
+      <p>Welcome, <%- account_firstname %>! you have logged in Successfully.</p>
+      <p>Email: <%-account_email%></p>
+      <p>Account_type: <%-account_type%></p>
+      <p>we are here to learn database for development in 2025 so <br> your welcome to join in our team</p>
+      <a href="/inv/">Manage Inventory</a>
+    </div>
+   
   </main>
