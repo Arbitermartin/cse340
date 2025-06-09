@@ -521,6 +521,7 @@ textarea {
   width: 100%;
   max-width: 400px;
   margin: 20px auto;
+
   text-align: left;
 }
 .management a{
@@ -579,7 +580,17 @@ p.error {
   color: red;
   font-weight: bold;
 }
-
+.logout-link button{
+  background-color: var(--color-bg);
+  width: 100px;
+  border: none;
+  height: 30px;
+  border-radius: 0.3rem;
+  color: var(--color-white);
+}
+.logout-link button:hover{
+  background-color: var(--color-primary-variant);
+}
 @media (max-width: 480px) {
   .vehicle-info h1 {
     font-size: 1.8rem;
