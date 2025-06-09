@@ -591,6 +591,11 @@ p.error {
 .logout-link button:hover{
   background-color: var(--color-primary-variant);
 }
+/* error message style */
+.message-notice{
+  color: var(--color-red);
+  text-align: center;
+}
 @media (max-width: 480px) {
   .vehicle-info h1 {
     font-size: 1.8rem;
