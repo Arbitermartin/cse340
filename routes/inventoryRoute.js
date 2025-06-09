@@ -101,5 +101,4 @@ router.get("/delete/:inv_id",utilities.restrictToEmployeeOrAdmin, utilities.hand
 router.post("/delete/",utilities.restrictToEmployeeOrAdmin,utilities.handleErrors(invController.deleteInventory))
 
 
-
 module.exports = router;

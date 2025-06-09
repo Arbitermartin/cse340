@@ -15,7 +15,11 @@
       <p>Email: <%-account_email%></p>
       <p>Account_type: <%-account_type%></p>
       <p>we are here to learn database for development in 2025 so <br> your welcome to join in our team</p>
-      <a href="/inv/">Manage Inventory</a>
+      <a href="/account/update/<%= accountData.account_id %>" title="Click to update your account information">Edit Account Information</a>
+     <% if(accountData.account_type != 'Client'){ %>
+   <h3>Inventory Management</h3>
+    <p><a href="/inv/" target="_blank">Manage Inventory</a></p> 
+   <% } %>
     </div>
    
   </main>

@@ -218,11 +218,23 @@ Util.handleErrors = fn => (req, res, next) => {
   })
 }
 
-
   /****************************************
  *  Check Login
  * ************************************ */
- Util.checkLogin = (req, res, next) => {
+//  Util.checkLogin = (req, res, next) => {
+//   console.log("Checking loggedin status:", res.locals.loggedin, "account_type:", res.locals.accountData?.account_type)
+//   if (res.locals.loggedin && ['Employee', 'Admin'].includes(res.locals.accountData?.account_type)) {
+//     next()
+//   } else {
+//     req.flash("notice", "Please log in as an Employee or Admin.")
+//     return res.redirect("account/login")
+//   }
+// }
+/* ****************************************
+ *  Check Login
+ *  Unit 5, jwt authorize activity
+ * ************************************ */
+Util.checkLogin = (req, res, next) => {
   if (res.locals.loggedin) {
     next()
   } else {
@@ -230,15 +242,5 @@ Util.handleErrors = fn => (req, res, next) => {
     return res.redirect("/account/login")
   }
  }
-
- Util.checkLogin = (req, res, next) => {
-  console.log("Checking loggedin status:", res.locals.loggedin, "account_type:", res.locals.accountData?.account_type)
-  if (res.locals.loggedin && ['Employee', 'Admin'].includes(res.locals.accountData?.account_type)) {
-    next()
-  } else {
-    req.flash("notice", "Please log in as an Employee or Admin.")
-    return res.redirect("account/login")
-  }
-}
 
 module.exports =Util
