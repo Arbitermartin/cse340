@@ -668,6 +668,13 @@ p.error {
 .park-card h3{
   text-align: center;
 }
+.park-card p{
+  width: 100%;
+  padding: 0;
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 600;
+}
 
 .park-image {
   max-width: 100%;
@@ -809,6 +816,7 @@ p.error {
   margin-left: 3rem;
 }
 }
+
 /* Tablets and small desktops */
 @media (min-width: 769px) and (max-width: 1024px) {
   #inv-display {
