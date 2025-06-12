@@ -645,16 +645,28 @@ p.error {
 .park-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 1rem;
   
+}
+.parks{
+  text-align: center;
+  background-color: var(--color-bg);
+  padding: 2rem;
+  color: var(--color-white);
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .park-card {
-  border: 1px solid #ddd;
-  padding: 15px;
+  border: 1px solid var(--color-bg);
+  padding: 2rem;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: var(--color-bg);
+  color: var(--color-white);
   margin: 20px 30px;
+}
+.park-card h3{
+  text-align: center;
 }
 
 .park-image {
