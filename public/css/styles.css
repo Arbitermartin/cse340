@@ -596,6 +596,73 @@ p.error {
   color: var(--color-red);
   text-align: center;
 }
+/* new style 11.06.2025 */
+.parks_tz{
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: var(--color-bg);
+  padding: 2rem;
+  color: var(--color-white);
+}
+ .parks_tz a{
+ color: var(--color-white);
+ text-decoration: none;
+
+}
+.parks_tz a:hover{
+  text-decoration: underline;
+  color: var(--color-primary-variant);
+}
+
+.region-selector {
+  background-color: #f4f4f4;
+  padding: 15px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.region-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.region-button {
+  display: inline-block;
+  background-color: var(--color-bg);
+  color: var(--color-white);
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.region-button:hover {
+  background-color: var(--color-primary-variant);
+}
+
+.park-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  
+}
+
+.park-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #fff;
+  margin: 20px 30px;
+}
+
+.park-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+/* end here */
 @media (max-width: 480px) {
   .vehicle-info h1 {
     font-size: 1.8rem;

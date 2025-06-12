@@ -1,0 +1,35 @@
+
+  <main>
+    <h1><%- title %></h1>
+    <% if (messages.notice) { %>
+      <p class="notice"><%- messages.notice %></p>
+    <% } %>
+    <div class="region-selector">
+      <h3>Select a Region in Tanzania</h3>
+      <% if (regions && Array.isArray(regions) && regions.length) { %>
+        <div class="region-buttons">
+          <% regions.forEach(region => { %>
+            <a href="/parks/region/<%- encodeURIComponent(region) %>" class="region-button" aria-label="View national parks in <%- region %>"><%- region %></a>
+          <% }) %>
+        </div>
+      <% } else { %>
+        <p>No regions available at this time.</p>
+      <% } %>
+    </div>
+    <% if (parks && parks.length) { %>
+      <h2>Parks in <%- selectedRegion %></h2>
+      <div class="park-list">
+        <% parks.forEach(park => { %>
+          <div class="park-card">
+            <h3><%- park.park_name %></h3>
+            <% if (park.image_url) { %>
+              <img src="<%- park.image_url %>" alt="<%- park.park_name %>" class="park-image">
+            <% } %>
+            <p><%- park.description %></p>
+            <p><strong>Region:</strong> <%- park.region %></p>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </main>
+ 

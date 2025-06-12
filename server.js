@@ -15,6 +15,7 @@ const inventoryRoute = require("./routes/inventoryRoute");
 const accountRoute =require("./routes/accountRoute")
 const utilities = require("./utilities/");
 const session = require("express-session")
+const nationalparkRoute = require("./routes/nationalparkRoute")
 const pool = require('./database/')
 const bodyParser = require("body-parser")
 const flash =require("connect-flash")
@@ -50,6 +51,7 @@ app.use(function(req, res, next){
   next()
 })
 
+
 // bodyParser  added here.
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
@@ -68,6 +70,8 @@ app.use("/inv", inventoryRoute);
 
 // account route
 app.use("/account",accountRoute);
+//for national parks
+app.use("/parks", nationalparkRoute)
 
 // Index route
 app.get("/", utilities.handleErrors(baseController.buildHome));
