@@ -1,11 +1,11 @@
 {
     "version": 2,
     "builds": [
-      { "cse340": "server.js", "use": "@vercel/node" }
+      { "src": "server.js", "use": "@vercel/node" }
     ],
     "routes": [
-      { "cse340": "/(.*)", "dest": "server.js" }
+      { "src": "/(.*)", "dest": "server.js" }
     ]
   }
-
+  
   
