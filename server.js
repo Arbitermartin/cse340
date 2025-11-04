@@ -5,6 +5,7 @@
 /* ***********************
  * Require Statements
  *************************/
+const path = require("path");
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const env = require("dotenv").config();
@@ -13,7 +14,7 @@ const static = require("./routes/static");
 const baseController = require("./controllers/baseController");
 const inventoryRoute = require("./routes/inventoryRoute");
 const accountRoute =require("./routes/accountRoute")
-const utilities = require("./utilities/");
+const utilities = require("./utilities/")
 const session = require("express-session")
 const nationalparkRoute = require("./routes/nationalparkRoute")
 const countryRoute =require('./routes/countryRoute')
@@ -25,6 +26,7 @@ const cookieParser = require("cookie-parser")
 /* ***********************
  * Routes
  *************************/
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(expressLayouts);
 app.set("layout", "./layouts/layout"); // not at views root
@@ -63,7 +65,8 @@ app.use(cookieParser())
 //webtoken
 app.use(utilities.checkJWTToken)
 
-app.use(express.static('public'));
+// app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(static);
 
 // Inventory routes
