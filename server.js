@@ -16,6 +16,7 @@ const accountRoute =require("./routes/accountRoute")
 const utilities = require("./utilities/");
 const session = require("express-session")
 const nationalparkRoute = require("./routes/nationalparkRoute")
+const countryRoute =require('./routes/countryRoute')
 const pool = require('./database/')
 const bodyParser = require("body-parser")
 const flash =require("connect-flash")
@@ -72,6 +73,9 @@ app.use("/inv", inventoryRoute);
 app.use("/account",accountRoute);
 //for national parks
 app.use("/parks", nationalparkRoute)
+
+//country route
+app.use("/country",countryRoute)
 
 // Index route
 app.get("/", utilities.handleErrors(baseController.buildHome));

@@ -683,6 +683,70 @@ p.error {
   margin-top: 1rem;
 }
 /* end here */
+
+/* countries style */
+.notice {
+  background-color: #ffffcc;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+.search-form {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.search-form label {
+  font-weight: bold;
+  line-height: 3rem;
+}
+
+.search-form input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.search-form button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background-color: #2980b9;
+}
+
+.country-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.country-card {
+  border: 1px solid #ddd;
+  margin: 0;
+  padding: 15px;
+  height: auto;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.flag-image {
+  max-width: 250px;
+  height: auto;
+  border-radius: 3px;
+}
+
+
+/* end here */
 @media (max-width: 480px) {
   .vehicle-info h1 {
     font-size: 1.8rem;
@@ -816,6 +880,23 @@ p.error {
  .management a{
   margin-left: 3rem;
 }
+.country-list{
+grid-template-columns: 1fr;
+}
+.country-card{
+  width: 90%;
+  max-width: 400px;
+  margin: 15px auto;
+}
+.search-form {
+  flex-direction: column;
+}
+
+.search-form input[type="text"],
+.search-form button {
+  width: 100%;
+}
+
 }
 
 /* Tablets and small desktops */

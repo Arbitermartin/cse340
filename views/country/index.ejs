@@ -1,0 +1,29 @@
+
+  <main>
+    <h1><%- title %></h1>
+    <% if (messages.notice) { %>
+      <p class="notice"><%- messages.notice %></p>
+    <% } %>
+    <form action="/country" method="POST" class="search-form">
+      <label for="searchTerm">Search by Country Name:</label>
+      <input type="text" id="searchTerm" name="searchTerm" value="<%- searchTerm %>" placeholder="e.g., Nigeria">
+      <button type="submit">Search</button>
+    </form>
+    <% if (countries && countries.length) { %>
+      <div class="country-list">
+        <% countries.forEach(country => { %>
+          <div class="country-card">
+            <h2><%- country.country_name %></h2>
+            <img src="<%- country.flag_url %>" alt="Flag of <%- country.country_name %>" class="flag-image">
+            <p><strong>Capital:</strong> <%- country.capital %></p>
+            <p><strong>Population:</strong> <%- country.population.toLocaleString() %></p>
+            <p><strong>Major Export:</strong> <%- country.major_export %></p>
+            <p><strong>Tourist Attraction:</strong> <%- country.tourist_attraction %></p>
+          </div>
+        <% }) %>
+      </div>
+    <% } else { %>
+      <p>No countries found.</p>
+    <% } %>
+  </main>
+ 
